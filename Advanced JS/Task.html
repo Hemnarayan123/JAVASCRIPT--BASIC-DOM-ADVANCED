@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+class Even {
+    constructor(arr) {
+        this.arr = arr;
+        this.evenArr = [];
+    }
+
+    findEven() {
+        this.arr.forEach((num) => {
+            if (num % 2 === 0) {
+                this.evenArr.push(num);
+            }
+        });
+    }
+}
+
+class Prime extends Even {
+    constructor(arr) {
+        super(arr);
+        this.evenArr = [];
+        this.primeArr = [];
+    }
+
+    isPrime(num) {
+        if (num < 2) return false;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    findPrime() {
+        this.findEven(); // Call findEven to populate evenArr
+        this.arr.forEach((num) => {
+            if (this.isPrime(num)) {
+                this.primeArr.push(num);
+            }
+        });
+
+        console.log("Even numbers:", this.evenArr);
+        console.log("Count of prime numbers:", this.primeArr.length);
+        console.log("Prime numbers:", this.primeArr);
+    }
+}
+
+// Example usage
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const primeNumbers = new Prime(numbers);
+primeNumbers.findPrime();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class parent {
+        constructor(name, city, age) {
+          this.name = name;
+          this.city = city;
+          this.age = age;
+        }
+        chair(pin) {
+          this.pin = pin;
+          console.log(this.pin);
+          console.log(this.city);
+        }
+        laptop() {
+          console.log(this.age);
+        }
+        table() {
+          console.log(this.name);
+        }
+      }
+      gg = new parent("veer", "jodhpur", 40);
+      gg.chair(123);
+      gg.table();
+      gg.laptop();
+    </script>
+  </body>
+</html>

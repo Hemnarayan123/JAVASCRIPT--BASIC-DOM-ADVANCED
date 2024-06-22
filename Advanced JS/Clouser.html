@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // ..............................nested function
+      // function add(){
+
+      //     console.log('this is outer ');
+
+      //     function sub(){
+      //         console.log('this is inner');
+      //     }
+      //     sub()
+      // }
+      // add()
+
+      // ...........................clouser
+
+      function outer() {
+        let outerVar = "Main outer function se hoon";
+
+        function inner() {
+          console.log(outerVar);
+        }
+
+        return inner;
+      }
+
+      // Closure banane ke liye inner function ko ek variable me store karen
+      const closure = outer();
+
+      // Closure ko call karen, aur yeh outerVariable ko access karega
+      closure(); // Output: Main outer function se hoon
+    </script>
+  </body>
+</html>

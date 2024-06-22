@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        class Profile {
+            constructor(name, age, city) {
+                this.name = name;
+                this.age = age;
+                this.city = city;
+            }
+    
+            showFatherProfile() {
+                console.log(`Father Name: ${this.name}, Age: ${this.age}, City: ${this.city}`);
+            }
+        }
+    
+        class ChildProfile extends Profile {
+            constructor(name, age, city, surname) {
+                super(name, age, city);
+                this.surname = surname
+            }
+    
+            showChildProfile() {
+                console.log(`My Name: ${this.name}, Age: ${this.age}, City: ${this.city} Surname: ${this.surname}`);
+            
+            }
+        }
+    
+        // Object ko create karne ka tareeka
+        let father = new Profile("XYZ", 40, "Jodhpur");
+        let son = new ChildProfile("ABC", 10, "Jodhpur", "Yadav");
+    
+        // Object ke properties aur methods ko access karna
+        father.showFatherProfile();
+        son.showChildProfile();
+    </script>
+  </body>
+</html>
